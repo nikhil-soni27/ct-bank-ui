@@ -1,0 +1,51 @@
+.hero-card-container {
+  width: 100%;
+  box-shadow: 0px 4px 24px rgba(166, 166, 166, 0.03);
+  border-radius: 8px;
+  background-color: #fff;
+}
+.hero-card-container .hero-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+.hero-card-container .hero-card img {
+  width: 100%;
+}
+.hero-card-container .hero-card-title {
+  border-radius: 10px 10px 0px 0px;
+  font-size: 1.2rem;
+  color: #282828;
+  background: #fff;
+  padding: 1rem 1rem;
+  margin: 0;
+  text-align: center;
+}
+.hero-card-container .hero-card-subtitle,
+.hero-card-container .hero-card-text {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #282828;
+  background: #fff;
+  padding: 1rem 1rem;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+.hero-card-container .hero-card .action-buttons {
+  display: block;
+  width: 100%;
+  font-size: 1.1rem;
+  background: #fff;
+  border-radius: 20px;
+}
+.hero-card-container .hero-card .action-buttons button {
+  border: none;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  width: 100%;
+  font-size: 1.1rem;
+  color: #a90047;
+  cursor: pointer;
+}

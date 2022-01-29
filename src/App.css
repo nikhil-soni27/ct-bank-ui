@@ -1,38 +1,292 @@
-.App {
+.body {
+  max-width: 100%;
+  height: 100%;
+  border: 2px solid whitesmoke;
+  max-height: 100%;
+  min-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgb(238, 238, 238);
+}
+.message-container {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.user-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: end;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  gap: 2px;
+  border-radius: 15px 15px 0px 15px;
+  padding: 1.3rem 2.9rem 1.3rem 1.6rem;
+  max-width: max-content;
+  background-color: #fff;
+}
+.bot-message {
+  display: flex;
+  align-self: start;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  gap: 2px;
+  border-radius: 1rem 1rem 1rem 0px;
+  background-color: white;
+  padding: 1.3rem 2.9rem 1.3rem 1.6rem;
+  max-width: max-content;
+  color: #000000;
+  background-color: whitesmoke;
+}
+.bot-adaptive-card {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+.ac-actionSet {
+  display: block !important;
+}
+button {
+  margin-bottom: 1rem;
+}
+
+.ac-container .ac-adaptiveCard {
+  color: #f6ffff;
+  font-size: 1rem;
+}
+.bot-message button {
+  background: transparent;
+  border-radius: 20px;
+  border: none;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 0.2rem 0.2rem;
+  cursor: pointer;
+  color: black;
+}
+.message-button {
+  display: flex;
+}
+
+.footer {
+  height: 100%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0px -3px 12px #0000000f;
+  border-radius: 0px 0px 16px 16px;
+  flex-wrap: nowrap;
+  background-color: #fff;
+}
+.input-container {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+input {
+  outline: none;
+  background: #e8e8e8;
+  width: 16rem;
+  height: 32px;
+  margin-left: 1rem;
+  border: none !important;
+}
+
+.submit-button-container {
+  position: relative;
+  /* width: 37px;
+  height: 37px; */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  /* background: #d23022;
+  border-radius: 50%; */
+}
+.submit-button {
+  border: none;
+  background: #d23022;
+  border-radius: 50%;
+  width: 2rem;
+  margin-left: 2rem;
+  height: 2rem;
+  margin-top: 1rem;
+}
+.mic {
+  margin-left: -2rem;
+}
+.svg {
+  font-size: 2rem;
+}
+.chatbot {
+  width: 450px;
+  height: 700px;
+  background-size: cover;
+  position: fixed;
+  box-shadow: 0px 6px 24px #0000000f;
+  border-radius: 16px;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.chatbot.mini {
+  height: auto;
+  min-height: auto;
+  width: 25rem;
+}
+.chatbot.mini .body-container {
+  height: 0;
+}
+.chatbot.mini .body-container > * {
+  height: 0;
+  display: none;
+}
+.chatbot .header-container {
+  height: 80px;
+  background-color: #d23022;
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+.icon-circle {
+  width: 60px;
+  display: flex;
+  margin: 0.5rem;
+  margin-left: 1.5rem;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+}
+.chatbot .body-container {
+  flex: 1;
+  width: 100%;
+  max-height: 80%;
+}
+.chatbot .footer-container {
+  height: 4rem;
+  background-color: transparent;
+  width: 100%;
+}
+img {
+  width: 470px;
+  height: 200px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.switch > span {
+  position: absolute;
+  top: 14px;
+  pointer-events: none;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  width: 50%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input.check-toggle-round-flat:checked ~ .off {
+  color: #dc4234;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input.check-toggle-round-flat:checked ~ .on {
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.switch > span.on {
+  left: 0;
+  padding-left: 2px;
+  color: #dc4234;
 }
 
-.App-link {
-  color: #61dafb;
+.switch > span.off {
+  right: -6px;
+  padding-right: 4px;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.check-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.check-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input.check-toggle-round-flat + label {
+  padding: 2px;
+  width: 5.1rem;
+  height: 35px;
+  background-color: #dc4234;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 100px;
+}
+
+input.check-toggle-round-flat + label:before,
+input.check-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.check-toggle-round-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #dc4234;
+  -webkit--moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+input.check-toggle-round-flat + label:after {
+  top: 4px;
+  left: 3px;
+  bottom: 4px;
+  width: 37px;
+  background-color: #fff;
+  -webkit-border-radius: 52px;
+  -moz-border-radius: 52px;
+  -ms-border-radius: 52px;
+  -o-border-radius: 52px;
+  border-radius: 52px;
+  -webkit-transition: margin 0.2s;
+  -moz-transition: margin 0.2s;
+  -o-transition: margin 0.2s;
+  transition: margin 0.2s;
+}
+input.check-toggle-round-flat:checked + label:after {
+  margin-left: 44px;
 }
